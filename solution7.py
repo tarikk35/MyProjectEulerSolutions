@@ -14,11 +14,12 @@ import math
 def PrimeFinder(index):
     currIndex,number,prime=0,2,0
     while(currIndex<=index):
-        dividedCount=0
+        isDivided=False
         for i in range(2,int(math.sqrt(number)+1)):
             if number%i==0:
-                dividedCount+=1
-        if dividedCount==0:
+                isDivided=True
+                break
+        if isDivided is False:
             prime=number
             currIndex+=1
         number+=1
